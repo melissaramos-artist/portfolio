@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carousel — Melissa Ramos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #141414;
+    --muted: #6e6e6c;
+    --line: #e4e2dd;
+    --accent: #2c4a3d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', system-ui, sans-serif;
+  }
+  .page-intro {
+    padding: 3rem 1.5rem 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .page-intro h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin: 0 0 0.5rem;
+  }
+  .page-intro p {
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0 3rem;
+    padding: 0;
+  }
+
+  .carousel-viewport {
+    position: relative;
+    overflow: hidden;
+    background: #f4f3f0;
+    touch-action: pan-y;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.35s ease;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .slide img,
+  .slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slide .caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.9rem 1.2rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.55), transparent);
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.92);
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .carousel-btn:hover { background: #fff; }
+  .carousel-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .carousel-btn.prev { left: 0.75rem; }
+  .carousel-btn.next { right: 0.75rem; }
+
+  @media (max-width: 560px) {
+    .carousel-btn { display: none; } /* mobile relies on swipe */
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--line);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .dot[aria-current="true"] {
+    background: var(--accent);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="display" href="index.html">Melissa Ramos</a>
+  <nav>
+    <a href="paintings.html">Paintings</a>
+    <a href="moving-image.html">Moving Image</a>
+    <a href="curator.html">Curator</a>
+    <a href="carousel.html" aria-current="page">Carousel</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page-intro">
+  <h1>Selected Work</h1>
+  <p>Swipe on mobile, or use the arrows — includes stills and a video.</p>
+</div>
+
+<div class="carousel" role="region" aria-label="Image and video carousel">
+  <div class="carousel-viewport">
+    <div class="carousel-track" id="track">
+
+      <div class="slide">
+        <img src="images/slide-1.jpg" alt="Description of piece one" onerror="this.style.display='none'; this.parentElement.style.background='#e4e2dd';">
+        <div class="caption">Piece title — oil on linen, 2026</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/slide-2.jpg" alt="Description of piece two" onerror="this.style.display='none'; this.parentElement.style.background='#e4e2dd';">
+        <div class="caption">Piece title — oil on panel, 2025</div>
+      </div>
+
+      <div class="slide">
+        <video controls playsinline preload="metadata" poster="images/video-poster.jpg">
+          <source src="images/film.mp4" type="video/mp4">
+        </video>
+        <div class="caption">Film title — HD video, 2026</div>
+      </div>
+
+      <div class="slide">
+        <img src="images/slide-3.jpg" alt="Description of piece three" onerror="this.style.display='none'; this.parentElement.style.background='#e4e2dd';">
+        <div class="caption">Piece title — oil on linen, 2024</div>
+      </div>
+
+    </div>
+
+    <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">&#8249;</button>
+    <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">&#8250;</button>
+  </div>
+
+  <div class="dots" id="dots"></div>
+</div>
+
+<script>
+(function () {
+  const track = document.getElementById('track');
+  const slides = Array.from(track.children);
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsWrap = document.getElementById('dots');
+  let index = 0;
+  let startX = 0;
+  let currentX = 0;
+  let dragging = false;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot';
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function update() {
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    dots.forEach((d, i) => d.setAttribute('aria-current', i === index ? 'true' : 'false'));
+    // pause any video not in view
+    slides.forEach((s, i) => {
+      const v = s.querySelector('video');
+      if (v && i !== index) v.pause();
+    });
+  }
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    update();
+  }
+
+  prevBtn.addEventListener('click', () => goTo(index - 1));
+  nextBtn.addEventListener('click', () => goTo(index + 1));
+
+  document.querySelector('.carousel').addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') goTo(index - 1);
+    if (e.key === 'ArrowRight') goTo(index + 1);
+  });
+
+  const viewport = document.querySelector('.carousel-viewport');
+
+  viewport.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    dragging = true;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  viewport.addEventListener('touchmove', (e) => {
+    if (!dragging) return;
+    currentX = e.touches[0].clientX - startX;
+    const percent = (currentX / viewport.offsetWidth) * 100;
+    track.style.transform = 'translateX(calc(-' + (index * 100) + '% + ' + percent + '%))';
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', () => {
+    dragging = false;
+    track.style.transition = 'transform 0.35s ease';
+    const threshold = viewport.offsetWidth * 0.18;
+    if (currentX < -threshold) goTo(index + 1);
+    else if (currentX > threshold) goTo(index - 1);
+    else update();
+    currentX = 0;
+  });
+
+  update();
+})();
+</script>
+
+</body>
+</html>
