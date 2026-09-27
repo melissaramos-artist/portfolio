@@ -251,6 +251,35 @@ a:focus-visible, button:focus-visible {
   font-size: 0.85rem;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.social-links svg {
+  width: 17px;
+  height: 17px;
+}
+
 /* Responsive */
 
 @media (max-width: 720px) {
