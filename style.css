@@ -46,8 +46,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .site-header .display {
-  font-size: 1.8rem;
-  font-style: italic;
+  font-size: 2rem;
   text-decoration: none;
 }
 
