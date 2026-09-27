@@ -16,13 +16,13 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
-h1 {
+ .display {
   font-family: "UnifrakturMaguntia", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-h2, h3, .display {
+h1, h2, h3 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 500;
   margin: 0;
