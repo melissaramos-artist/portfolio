@@ -184,7 +184,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .about-copy p {
-  color: var(--text);
+  color: var(--muted);
   max-width: 60ch;
   margin-bottom: 1.1rem;
 }
