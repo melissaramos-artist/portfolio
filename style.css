@@ -98,6 +98,7 @@ a:focus-visible, button:focus-visible {
   gap: 1px;
   background: var(--line);
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .grid figure {
