@@ -110,7 +110,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .video {
-  padding: 4rem 3rem 2.5rem;
+  left-padding: 2.5rem;
 }
 
 
