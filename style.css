@@ -109,6 +109,10 @@ a:focus-visible, button:focus-visible {
   max-width: 55ch;
 }
 
+.video {
+  padding: 4rem 3rem 2.5rem;
+}
+
 
 /* Image grid */
 
