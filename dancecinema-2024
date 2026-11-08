@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Island in Pacific — Melissa Ramos</title>
+<title>Curatorial 2024— Melissa Ramos</title>
   <!-- Google Fonts import -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,10 +141,8 @@
 </header>
   
 <div class="page-intro">
-  <h1>Island in Pacific</h1>
-  <p>Oil on linen. 2026</p>
-  <p>The lens of my identity is through a diaspora scene, between a romantic view through the lens of history and my present cultural narratives. When I searched for historic classical paintings of the Philippines, I was struck to see a painting of Asian women depicted in Spanish colonial western clothes. Distilling my historic identity to the present, I wanted to depict my identity as an effervescent being; connected to the land and animals and centred in the red desert open plans. Holding on to the past; yet optimistic about the future.
-</p>
+  <h1>Dance Cinema Curatorial</h1>
+  <p>Connect Contemporary Dance Festival  | Sept 2024. Romania</p>
 </div>
 
 <div class="carousel" role="region" aria-label="Image and video carousel">
@@ -164,8 +162,12 @@
 
   <div class="dots" id="dots"></div>
 -->
-    
+
+<p>The lens of my identity is through a diaspora scene, between a romantic view through the lens of history and my present cultural narratives. When I searched for historic classical paintings of the Philippines, I was struck to see a painting of Asian women depicted in Spanish colonial western clothes. Distilling my historic identity to the present, I wanted to depict my identity as an effervescent being; connected to the land and animals and centred in the red desert open plans. Holding on to the past; yet optimistic about the future.
+</p>
+
 </div>
+
 
 <script>
 (function () {
