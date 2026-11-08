@@ -323,3 +323,12 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+@media (max-width: 767px) {
+  .video {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain; /* Keeps the aspect ratio from stretching */
+  }
+}
